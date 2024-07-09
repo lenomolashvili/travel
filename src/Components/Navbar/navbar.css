@@ -1,0 +1,188 @@
+:root {
+  --PrimaryColor: hsl(120, 100%, 33%); /* Green (Deep) */
+  --SecondaryColor: hsl(85, 85%, 43%); /* Yellow-Green (Vibrant) */
+  --gradientColor: linear-gradient(to right, hsl(85, 85%, 43%), hsl(120, 100%, 33%)); /* Gradient from Yellow-Green to Deep Green */
+  --whiteColor: hsl(0, 0%, 100%); /* White */
+  --blackColor: hsl(135, 20%, 15%); /* Dark Green-Black */
+  --textColor: hsl(120, 4%, 36%); /* Muted Green */
+  --whiteColorDeam: hsl(0, 0%, 93%); /* Light Grey */
+  --greyText: rgb(180, 180, 180); /* Grey (Slightly Warmer) */
+  --inputColor: rgb(239, 239, 239); /* Light Grey */
+  --bodyColor: rgb(240, 240, 240); /* Light Grey */
+  --cardBG: rgb(230, 230, 220); /* Light Grey (Slightly Warmer) */
+}
+
+.header {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--whiteColor);
+  width: 100%;
+  padding: 1rem;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(2, 15, 29, 0.167);
+}
+.header .logo {
+  color: var(--blackColor);
+  font-weight: 600;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+}
+.header .logo .icon {
+  font-size: 25px;
+  color: var(--PrimaryColor);
+  transform: translateY(5px);
+}
+@media screen and (max-width: 768px) {
+  .header .navBar {
+    position: absolute;
+    background: var(--whiteColorDeam);
+    height: -moz-max-content;
+    height: max-content;
+    width: 80%;
+    border-radius: 1rem;
+    padding: 1rem;
+    top: -50rem;
+    left: 50%;
+    transform: translate(-50%);
+    z-index: 2000;
+    box-shadow: 0 2px 4px rgba(2, 15, 29, 0.904);
+    transition: 0.5s ease-in-out;
+  }
+  .header .navBar .navLists {
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    margin: auto;
+    padding: 0.5rem 0;
+  }
+  .header .navBar .navLists .navItem {
+    padding: 0.5rem 0;
+  }
+  .header .navBar .navLists .navItem .navLink {
+    color: var(--textColor);
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+  .header .navBar .navLists .navItem .navLink:hover {
+    color: var(--PrimaryColor);
+  }
+  .header .navBar .navLists .btn {
+    margin-top: 1rem;
+  }
+  .header .navBar .navLists .btn a {
+    font-weight: 600;
+    color: var(--whiteColor);
+  }
+  .header .navBar .closeNavbar {
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    color: var(--PrimaryColor);
+  }
+  .header .navBar .closeNavbar:hover {
+    color: var(--SecondaryColor);
+  }
+  .header .activeNavbar {
+    top: 7rem !important;
+  }
+}
+.header .toggleNavbar .icon {
+  font-size: 25px;
+  color: var(--PrimaryColor);
+}
+.header .toggleNavbar:hover.icon {
+  color: var(--SecondaryColor);
+}
+
+.login-page {
+  top: 100px;
+  width: 360px;
+  margin: auto;
+}
+.login-page .form {
+  top: -50rem;
+  position: absolute;
+  z-index: 999;
+  background: var(--whiteColor);
+  max-width: 360px;
+  margin: 0 auto;
+  padding: 45px;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+  transition: 0.5s ease-in-out;
+}
+.login-page .form .login-action {
+  padding: 10px;
+  margin-bottom: 20px;
+  width: 100%;
+  text-align: center;
+  border-radius: 15px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 15px;
+}
+.login-page .form input {
+  outline: 0;
+  background: #f2f2f2;
+  width: 100%;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+.login-page .form .message {
+  margin: 15px 0 0;
+  color: #b3b3b3;
+  font-size: 12px;
+}
+.login-page .form .message a {
+  color: var(--PrimaryColor);
+  text-decoration: none;
+}
+.login-page .activeForm {
+  top: 10rem !important;
+}
+
+@media screen and (min-width: 769px) {
+  .toggleNavbar, .closeNavbar {
+    display: none;
+  }
+  .activeForm {
+    top: 5rem !important;
+  }
+  .header {
+    padding: 1.5rem 2rem;
+  }
+  .header .navBar .navLists {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+  }
+  .header .navBar .navLists .navItem .navLink {
+    color: var(--textColor);
+    padding: 0 0.45rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+  .header .navBar .navLists .navItem .navLink:hover {
+    color: var(--PrimaryColor);
+  }
+  .header .navBar .navLists .btn {
+    margin-left: 1rem;
+  }
+  .header .navBar .navLists .btn a {
+    color: var(--whiteColor);
+    font-weight: 500;
+  }
+}
+@media screen and (min-width: 960px) {
+  .header .navBar .navLists .navItem {
+    padding: 0 0.7rem;
+  }
+}/*# sourceMappingURL=navbar.css.map */
